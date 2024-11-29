@@ -7,7 +7,15 @@ const authRoutes = require('./routes/authRoutes');
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+  origin: ['*'], // Add your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 // Connect to MongoDB
 connectDB();
