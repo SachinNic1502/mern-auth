@@ -14,7 +14,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+            const response = await axios.post('https://mern-auth-2x9q.onrender.com/api/auth/register', formData);
             localStorage.setItem('user', JSON.stringify({ username: formData.username }));
             navigate('/');
         } catch (error) {
