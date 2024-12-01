@@ -8,8 +8,12 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+
 const corsOptions = {
-  origin: ['*'], // Add your frontend domain
+  origin: [
+    'https://mern-auth-azmczfj5e-sachinrathodnic1-gmailcoms-projects.vercel.app',
+    'http://localhost:3000'
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
   optionsSuccessStatus: 200
